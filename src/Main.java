@@ -1,15 +1,33 @@
+import java.util.TreeMap;
+
 public class Main {
     public static void main(String[] args) {
-        BinaryTree tree = new BinaryTree();
+        // Create a TreeMap
+        // Student IDs and money raised
+        TreeMap<Integer, Integer> student = new TreeMap<>();
+        student.put(9, 30);
+        student.put(10, 25);
+        student.put(5, 15);
+        student.put(12, 10);
+        student.put(8, 40);
+        //now loop through the map
+        student.forEach((key, value) -> System.out.println("Key = " + key
+                + " Value = " + value));
+        System.out.println();
 
-        tree.root = new Node(4);
-        tree.root.left = new Node(2);
-        tree.root.right = new Node(6);
-        tree.root.left.left = new Node(1);
-        tree.root.left.right = new Node(3);
-        tree.root.right.left = new Node(5);
-        tree.root.right.right = new Node(7);
+//        System.out.println(student.firstEntry());
+//        System.out.println(student.lastEntry());
+//        System.out.println();
+//
+//        System.out.println(student.floorKey(11));
+//        System.out.println(student.floorEntry(11));
+//        System.out.println(student.ceilingKey(11));
+//        System.out.println(student.ceilingEntry(11));
 
-        System.out.println(tree.root.right.left.item);
+//        System.out.println(student.lowerKey(12));
+//        System.out.println(student.higherKey(12));
+
+        System.out.println(student.subMap(5, 11));
+
     }
 }
